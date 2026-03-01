@@ -102,11 +102,7 @@ function DashboardPage() {
         </Col>
         <Col xl={9} span={24}>
           <Card title="Revenue Trend">
-            <div
-              aria-label="Revenue trend chart"
-              role="img"
-              style={{ height: 280, width: '100%' }}
-            >
+            <div aria-label="Revenue trend chart" style={{ height: 280, width: '100%' }}>
               <ResponsiveContainer>
                 <AreaChart
                   data={data?.revenueTrend ?? []}

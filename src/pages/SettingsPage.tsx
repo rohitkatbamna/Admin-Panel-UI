@@ -20,8 +20,8 @@ function SettingsPage() {
         <Form<SettingsFormValues>
           form={form}
           initialValues={{
-            companyName: 'Acme Corporation',
-            supportEmail: 'support@acme.com',
+            companyName: '',
+            supportEmail: '',
             twoFactorRequired: true,
           }}
           layout="vertical"
