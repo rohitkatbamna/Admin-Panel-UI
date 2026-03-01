@@ -1,0 +1,74 @@
+:root {
+  color: #0f172a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  min-width: 320px;
+}
+
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-main {
+  padding: 24px;
+}
+
+.app-content-shell {
+  background-color: #ffffff;
+  border-radius: 12px;
+  min-height: calc(100vh - 136px);
+  padding: 24px;
+}
+
+.chart-placeholder {
+  align-items: center;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f1f5f9,
+    #f1f5f9 10px,
+    #e2e8f0 10px,
+    #e2e8f0 20px
+  );
+  border: 1px dashed #94a3b8;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  min-height: 240px;
+}
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filters-row > * {
+  min-width: 200px;
+}
