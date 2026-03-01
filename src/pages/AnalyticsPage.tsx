@@ -2,7 +2,6 @@ import { Card, Col, Empty, Row, Typography } from 'antd';
 import { useEffect } from 'react';
 import {
   CartesianGrid,
-  Cell,
   Legend,
   Line,
   LineChart,
@@ -39,7 +38,7 @@ function AnalyticsPage() {
         <Col md={16} span={24}>
           <Card title="Traffic Overview">
             {data ? (
-              <div aria-label="Traffic overview chart" role="img" style={{ height: 300 }}>
+              <div aria-label="Traffic overview chart" style={{ height: 300 }}>
                 <ResponsiveContainer>
                   <LineChart data={data.trafficTrend} margin={{ left: 12, right: 12 }}>
                     <CartesianGrid stroke="#e2e8f0" strokeDasharray="4 4" />
@@ -65,39 +64,39 @@ function AnalyticsPage() {
                 </ResponsiveContainer>
               </div>
             ) : (
-              <Empty description={status === 'loading' ? 'Loading chart...' : 'No data'} />
+              <Empty
+                description={status === 'loading' ? 'Loading chart...' : 'No data'}
+              />
             )}
           </Card>
         </Col>
         <Col md={8} span={24}>
           <Card title="Conversion Snapshot">
             {data ? (
-              <div aria-label="Conversion breakdown chart" role="img" style={{ height: 300 }}>
+              <div aria-label="Conversion breakdown chart" style={{ height: 300 }}>
                 <ResponsiveContainer>
                   <PieChart>
                     <Pie
                       cx="50%"
                       cy="50%"
-                      data={data.conversionByChannel}
+                      data={data.conversionByChannel.map((entry, index) => ({
+                        ...entry,
+                        fill: pieColors[index % pieColors.length],
+                      }))}
                       dataKey="value"
                       label
                       nameKey="channel"
                       outerRadius={90}
-                    >
-                      {data.conversionByChannel.map((entry, index) => (
-                        <Cell
-                          fill={pieColors[index % pieColors.length]}
-                          key={`${entry.channel}-${entry.value}`}
-                        />
-                      ))}
-                    </Pie>
+                    />
                     <Tooltip />
                     <Legend />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
             ) : (
-              <Empty description={status === 'loading' ? 'Loading chart...' : 'No data'} />
+              <Empty
+                description={status === 'loading' ? 'Loading chart...' : 'No data'}
+              />
             )}
           </Card>
         </Col>

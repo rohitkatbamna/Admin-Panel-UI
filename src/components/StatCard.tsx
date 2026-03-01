@@ -17,7 +17,7 @@ function StatCard({
   suffix,
   precision,
   loading = false,
-}: StatCardProps) {
+}: Readonly<StatCardProps>) {
   return (
     <Card aria-label={title} variant="borderless">
       <Statistic

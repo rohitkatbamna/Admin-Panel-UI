@@ -108,7 +108,10 @@ function DashboardPage() {
               style={{ height: 280, width: '100%' }}
             >
               <ResponsiveContainer>
-                <AreaChart data={data?.revenueTrend ?? []} margin={{ left: 12, right: 12 }}>
+                <AreaChart
+                  data={data?.revenueTrend ?? []}
+                  margin={{ left: 12, right: 12 }}
+                >
                   <defs>
                     <linearGradient id="revenueFill" x1="0" x2="0" y1="0" y2="1">
                       <stop offset="5%" stopColor="#0f766e" stopOpacity={0.4} />

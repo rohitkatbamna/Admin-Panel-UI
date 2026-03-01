@@ -54,8 +54,8 @@ function SettingsPage() {
         </Form>
       </Card>
       <Typography.Paragraph style={{ marginTop: 12 }} type="secondary">
-        This section is intentionally lightweight and can be extended by settings
-        modules as needed.
+        This section is intentionally lightweight and can be extended by settings modules
+        as needed.
       </Typography.Paragraph>
     </section>
   );

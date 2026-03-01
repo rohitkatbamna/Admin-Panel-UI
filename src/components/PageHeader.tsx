@@ -7,7 +7,7 @@ interface PageHeaderProps {
   extra?: ReactNode;
 }
 
-function PageHeader({ title, subtitle, extra }: PageHeaderProps) {
+function PageHeader({ title, subtitle, extra }: Readonly<PageHeaderProps>) {
   return (
     <header
       style={{
@@ -17,13 +17,11 @@ function PageHeader({ title, subtitle, extra }: PageHeaderProps) {
         marginBottom: 24,
       }}
     >
-      <Space direction="vertical" size={2}>
+      <Space orientation="vertical" size={2}>
         <Typography.Title level={2} style={{ margin: 0 }}>
           {title}
         </Typography.Title>
-        {subtitle ? (
-          <Typography.Text type="secondary">{subtitle}</Typography.Text>
-        ) : null}
+        {subtitle ? <Typography.Text type="secondary">{subtitle}</Typography.Text> : null}
       </Space>
       {extra}
     </header>

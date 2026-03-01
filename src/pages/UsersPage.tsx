@@ -1,15 +1,5 @@
 import { PlusOutlined } from '@ant-design/icons';
-import {
-  Button,
-  Card,
-  Form,
-  Input,
-  Modal,
-  Select,
-  Space,
-  Tag,
-  Typography,
-} from 'antd';
+import { Button, Card, Form, Input, Modal, Select, Space, Tag, Typography } from 'antd';
 import { useEffect, useMemo, useState } from 'react';
 import type { TableColumnsType } from 'antd';
 import DataTable from '../components/DataTable';
@@ -129,7 +119,10 @@ function UsersPage() {
     {
       key: 'actions',
       render: (_, record) => (
-        <Button aria-label={`Edit user ${record.name}`} onClick={() => openEditModal(record)}>
+        <Button
+          aria-label={`Edit user ${record.name}`}
+          onClick={() => openEditModal(record)}
+        >
           Edit
         </Button>
       ),

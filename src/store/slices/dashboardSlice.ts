@@ -15,9 +15,8 @@ const initialState: DashboardState = {
   status: 'idle',
 };
 
-export const fetchDashboard = createAsyncThunk(
-  'dashboard/fetchDashboard',
-  async () => dashboardService.fetchDashboardData(),
+export const fetchDashboard = createAsyncThunk('dashboard/fetchDashboard', async () =>
+  dashboardService.fetchDashboardData(),
 );
 
 const dashboardSlice = createSlice({

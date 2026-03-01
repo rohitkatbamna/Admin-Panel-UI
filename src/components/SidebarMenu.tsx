@@ -22,7 +22,11 @@ const iconMap: Record<string, ReactNode> = {
   users: <TeamOutlined />,
 };
 
-function SidebarMenu({ collapsed, selectedPath, onNavigate }: SidebarMenuProps) {
+function SidebarMenu({
+  collapsed,
+  selectedPath,
+  onNavigate,
+}: Readonly<SidebarMenuProps>) {
   const selectedKey =
     navigationItems.find((item) => selectedPath.startsWith(item.path))?.key ??
     'dashboard';
